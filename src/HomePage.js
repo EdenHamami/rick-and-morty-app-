@@ -14,7 +14,8 @@ const [order,setOrder]=useState("name ↓")
       .then(response => response.json())
       .then(json => {
         setCharacters(json.results);
-        let locations = Array.from(new Set(json.results.map(character => character.location.name)));
+        let locations = Array.from(new Set(json.results.map(character => 
+          character.location.name)));
         setLocations(locations);
       })
       .catch(error => console.error(error));
